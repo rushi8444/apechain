@@ -1,10 +1,13 @@
 import React from 'react'
 import Navbar from '../components/common/Navbar'
+import HeroSection from '../components/HomePage/HeroSection'
+
 const Home = () => {
   return (
     <div>
       <Navbar />
-      <h1>Home Page</h1>
+      <HeroSection/>
+      
     </div>
   )
 }

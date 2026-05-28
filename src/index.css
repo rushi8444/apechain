@@ -1,1 +1,22 @@
 @import "tailwindcss";
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --light-gray: #e8e8e8;
+  --pure-white: #ffffff;
+  --dark: #0a0b0d;
+  --nav-height: 64px;
+}
+
+@keyframes scaleDown {
+  0% {
+    transform: scale(5);
+  }
+  100% {
+    transform: scale(2);
+  }
+}
+
+.loader-text {
+  animation: scaleDown 3s ease-out;
+}

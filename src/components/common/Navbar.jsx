@@ -26,15 +26,15 @@ export default function ApechainNavbar() {
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-          --gold: #c8a84b;
-          --gold-bright: #e4c56a;
+          --light-gray: #c8a84b;
+          --pure-white: #e4c56a;
           --dark: #0a0b0d;
           --nav-height: 64px;
         }
 
         body {
           font-family: 'Barlow', sans-serif;
-          background: #111;
+          background: transparent;
           min-height: 200vh;
         }
 
@@ -46,28 +46,9 @@ export default function ApechainNavbar() {
           height: var(--nav-height);
           z-index: 1000;
           transition: all 0.4s ease;
+          background : transparent;
+         }
 
-          /* Transparent top fading to dark — matches the screenshot */
-          background: linear-gradient(
-            180deg,
-            rgba(0,0,0,0.82) 0%,
-            rgba(8,9,11,0.72) 55%,
-            rgba(10,11,13,0.30) 100%
-          );
-          backdrop-filter: blur(6px);
-          -webkit-backdrop-filter: blur(6px);
-          border-bottom: 1px solid rgba(200,168,75,0.08);
-        }
-
-        .navbar.scrolled {
-          background: linear-gradient(
-            180deg,
-            rgba(4,5,7,0.97) 0%,
-            rgba(6,7,9,0.95) 100%
-          );
-          border-bottom: 1px solid rgba(200,168,75,0.18);
-          box-shadow: 0 4px 32px rgba(0,0,0,0.7);
-        }
 
         .nav-inner {
           max-width: 1280px;
@@ -106,10 +87,6 @@ export default function ApechainNavbar() {
           background: rgba(200,168,75,0.06);
           opacity: 0;
           transition: opacity 0.3s;
-        }
-
-        .logo:hover .logo-box {
-          border-color: var(--gold);
         }
 
         .logo:hover .logo-box::before { opacity: 1; }
@@ -168,7 +145,7 @@ export default function ApechainNavbar() {
           transform: translateX(-50%);
           width: 0;
           height: 2px;
-          background: var(--gold);
+          background: #ffffff;
           transition: width 0.3s ease;
         }
 
@@ -195,7 +172,7 @@ export default function ApechainNavbar() {
           letter-spacing: 0.14em;
           text-transform: uppercase;
           color: var(--dark);
-          background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%);
+          background: linear-gradient(135deg, var(--pure-white) 0%, var(--light-gray) 100%);
           border: none;
           padding: 8px 20px;
           cursor: pointer;
@@ -280,26 +257,11 @@ export default function ApechainNavbar() {
         .mobile-menu a:hover,
         .mobile-menu a.active {
           color: #fff;
-          border-left-color: var(--gold);
+          border-left-color: var(--light-gray);
           background: rgba(200,168,75,0.06);
         }
 
-        .mobile-menu .btn-connect-mobile {
-          margin: 16px 28px 0;
-          display: block;
-          text-align: center;
-          font-family: 'Barlow Condensed', sans-serif;
-          font-weight: 700;
-          font-size: 0.9rem;
-          letter-spacing: 0.14em;
-          text-transform: uppercase;
-          color: var(--dark);
-          background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%);
-          padding: 10px 24px;
-          border: none;
-          cursor: pointer;
-          clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
-        }
+        
 
         /* ── Decorative ring overlay ── */
         .nav-rings {
@@ -350,7 +312,7 @@ export default function ApechainNavbar() {
         }
 
         .demo-hero h1 span {
-          color: var(--gold);
+          color: var(--light-gray);
         }
 
         .demo-hero p {
@@ -397,9 +359,9 @@ export default function ApechainNavbar() {
           </ul>
 
           {/* CTA */}
-          {/* <div className="nav-cta">
-            <button className="btn-connect">Connect Wallet</button>
-          </div> */}
+          <div className="">
+            <button > </button>
+          </div>
 
           {/* Hamburger */}
           <button
@@ -424,13 +386,7 @@ export default function ApechainNavbar() {
             {label}
           </a>
         ))}
-        <button className="btn-connect-mobile">Connect Wallet</button>
-      </div>
-
-      {/* Demo background so transparency is visible */}
-      <div className="demo-hero">
-        <h1>APE<span>CHAIN</span></h1>
-        <p>The home of APE</p>
+        
       </div>
     </>
   );
