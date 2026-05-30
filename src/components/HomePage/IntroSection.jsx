@@ -34,13 +34,11 @@ export default function IntroSection() {
           background: #dce8f0;
           display: flex;
           align-items: center;
-          // overflow: hidden;
+          overflow: hidden;
           font-family: 'Barlow', sans-serif;
           //changed
-          //  margin-top: -48px;
-          // padding-top: 48px;
-          margin-top: -120px;   /* ← was -48px */
-  padding-top: 120px;
+           margin-top: -48px;
+          padding-top: 48px;
         }
 
 /* ✅ CHANGE 2 — frosted blur overlay at the very top of the section */
@@ -66,29 +64,6 @@ export default function IntroSection() {
           -webkit-mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 100%);
           mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 100%);
         }
-
-        .intro-bottom-blur {
-  position: absolute;
-  bottom: 0;          /* ← was top: 0 */
-  left: 0;
-  right: 0;
-  height: 160px;
-  z-index: 10;
-  pointer-events: none;
-
-  background: linear-gradient(
-    to top,           /* ← was to bottom */
-    rgba(220, 232, 240, 1)   0%,
-    rgba(220, 232, 240, 0.7) 40%,
-    rgba(220, 232, 240, 0)   100%
-  );
-
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  -webkit-mask-image: linear-gradient(to top, black 0%, black 30%, transparent 100%); /* ← was to bottom */
-  mask-image: linear-gradient(to top, black 0%, black 30%, transparent 100%);         /* ← was to bottom */
-}
 
         /* ── Background image scraps ── */
         .intro-bg-left {
@@ -167,17 +142,18 @@ export default function IntroSection() {
 
         .intro-headline {
           font-family: 'Barlow Condensed', sans-serif;
-          font-weight: 900;
+          font-weight: 700;
           font-size: clamp(52px, 6.5vw, 88px);
-          line-height: 0.92;
+          line-height: 0.97;
           text-transform: uppercase;
           color: #111;
           margin: 0 0 28px 0;
-          letter-spacing: -0.01em;
+          letter-spacing: -0.05em;
         }
 
         .intro-body {
           color: #222;
+          font-weight: 500;
           font-size: 15px;
           line-height: 1.65;
           margin-bottom: 16px;
@@ -192,6 +168,7 @@ export default function IntroSection() {
         .intro-tagline {
           color: #222;
           font-size: 15px;
+          font-weight: 500;
           line-height: 1.65;
           margin-bottom: 36px;
         }
@@ -412,9 +389,7 @@ export default function IntroSection() {
                         </div>
 
                         <h1 className="intro-headline" data-anim>
-                            Where dapps
-                            <br />
-                            shine &amp;
+                            Where dapps shine &amp;
                             <br />
                             you win
                         </h1>
@@ -466,7 +441,6 @@ export default function IntroSection() {
                         </div>
                     </div>
                 </div>
-                <div className="intro-bottom-blur"/>
             </section>
         </>
     );
