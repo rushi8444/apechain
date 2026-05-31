@@ -85,12 +85,19 @@ function Track({ items, direction }) {
   const duration = direction === "left" ? "10s" : "16s";
   const animName = direction === "left" ? "ape-scroll-left" : "ape-scroll-right";
 
+  // FIX: For right-scrolling tracks, set initial transform to -50%
+  // so the animation starts exactly where the keyframe expects it,
+  // preventing a jump at the start of each loop cycle.
+  const initialTransform = direction === "right" ? "translateX(-50%)" : undefined;
+
   return (
-    <div style={{ overflow: "hidden" }}>
+    <div style={{ overflow: "hidden", width: "100%" }}>
       <div
         style={{
           display: "flex",
           alignItems: "center",
+          width: "fit-content",
+          transform: initialTransform,
           animation: `${animName} ${duration} linear infinite`,
           willChange: "transform",
         }}
@@ -137,6 +144,7 @@ export default function Marquee() {
         userSelect: "none",
       }}
     >
+      {/* FIX: ROW2 now correctly receives direction="right" */}
       <Track items={ROW1} direction="left" />
       <div style={{ height: 10 }} />
       <Track items={ROW2} direction="right" />
