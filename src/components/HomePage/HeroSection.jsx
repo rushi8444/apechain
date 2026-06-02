@@ -7,6 +7,7 @@ import Clutch from "../../assets/games/clutch.jpg";
 import th from "../../assets/games/three.jpg";
 import four from "../../assets/games/four.jpg";
 import five from "../../assets/games/five.jpg";
+import apePattern from '../../assets/ape-pattern.png'
 
 const SLIDES = [
   {
@@ -280,15 +281,44 @@ export default function HeroSection() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;600;700&family=Barlow:wght@300&display=swap');
 
+        .hs2-bottom-blur {
+   hight: 160px;     
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 10;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(220, 232, 240, 0)   0%,
+    rgba(220, 232, 240, 0.7) 40%,
+    rgba(220, 232, 240, 1)   100% 
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  -webkit-mask-image: linear-gradient(to top, black 0%, black 30%, transparent 100%);
+  mask-image: linear-gradient(to top, black 0%, black 30%, transparent 100%);
+}
+
+
         .hs2-root {
           position: relative;
           width: 100%;
-          height: 100vh;
-          min-height: 600px;
+          min-height: 100vh;
           overflow: hidden;
           background: #080808;
           font-family: 'Barlow Condensed', sans-serif;
           color: #fff;
+          padding-bottom: 80px;
+          // background: linear-gradient(
+          //    to right,
+          //    #00c853,
+          //    #ffee58,
+          //    #ffffff,
+          //    #000000
+          // );
         }
         .hs2-canvas-wrap {
           position: absolute;
@@ -469,7 +499,16 @@ export default function HeroSection() {
         }
       `}</style>
 
-      <section className="hs2-root">
+      <section className="hs2-root" 
+      style={{
+             backgroundImage: `url(${apePattern})`,
+             backgroundSize: 'cover',
+             backgroundPosition: 'center',
+             // backgroundAttachment: 'fixed',
+           
+            
+          }}
+      >
         <div className="hs2-rings">
           <svg width="700" height="700" viewBox="0 0 700 700" fill="none">
             {[70, 130, 200, 270, 340, 400].map((r, i) => (
@@ -508,13 +547,15 @@ export default function HeroSection() {
           SEE ALL APPS ▶
         </a>
 
-        <div className="hs2-strip">
+        <div className="hs2-strip ">
           {SLIDES.map((s, i) => (
             <div key={s.id} className={`hs2-thumb${i === activeIdx ? " active" : ""}`} onClick={() => goTo(i)}>
               <img src={s.image} alt={s.title} loading="lazy" />
             </div>
           ))}
         </div>
+        
+        {/* <div className="hs2-bottom-blur color-white" >AAAAAAAAAAAA</div> */}
       </section>
     </>
   );

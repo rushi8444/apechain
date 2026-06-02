@@ -9,7 +9,7 @@ const navLinks = [
 
 export default function ApechainNavbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [activeLink, setActiveLink] = useState("EXPLORE");
+  const [activeLink, setActiveLink] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -337,7 +337,7 @@ export default function ApechainNavbar() {
 
         <div className="nav-inner">
           {/* Logo */}
-          <a className="logo" href="#">
+          <a className="logo" onClick={() => setActiveLink(null)} href="/">
             <div className="logo-box">
               <span className="logo-text">APECHAIN</span>
             </div>
