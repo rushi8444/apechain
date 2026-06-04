@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Temp placeholder images — replace with actual imports from assets:
 import spotlightBgLeft from "../../assets/intro_leeft.jpg";
@@ -8,6 +9,7 @@ import apeBgRight from "../../assets/intro_right.jpg";
 
 export default function IntroSection() {
     const sectionRef = useRef(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const els = sectionRef.current?.querySelectorAll("[data-anim]");
@@ -414,8 +416,8 @@ export default function IntroSection() {
                         </p>
 
                         <div className="intro-ctas" data-anim>
-                            <button className="btn btn-outline">Get Started</button>
-                            <button className="btn btn-filled">Go Spotlight</button>
+                            <button className="btn btn-outline" onClick={() => navigate("/spotlight")}>Get Started</button>
+                            <button className="btn btn-filled" onClick={() => navigate("/spotlight")}>Go Spotlight</button>
                         </div>
                     </div>
 

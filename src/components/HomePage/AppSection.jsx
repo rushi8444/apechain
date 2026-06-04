@@ -351,7 +351,7 @@ export default function AppsSection() {
           <a className="apps-card" href="#" data-col="1" data-row="1" aria-label="Otherside">
             <img className="apps-card-img" src={APPS[0].image} alt="Otherside" />
             <div className="apps-card-overlay" />
-            <span className="apps-card-badge" style={{ color: CATEGORY_COLOR["GAMES"] }}>
+            <span className="apps-card-badge" style={{ backgroundColor: CATEGORY_COLOR["GAMES"] }}>
               GAMES
             </span>
             <div className="apps-card-body">
@@ -364,7 +364,7 @@ export default function AppsSection() {
           <a className="apps-card" href="#" data-col="2" data-row="1" aria-label="Made By Apes">
             <img className="apps-card-img" src={APPS[1].image} alt="Made By Apes" />
             <div className="apps-card-overlay" />
-            <span className="apps-card-badge" style={{ color: CATEGORY_COLOR["INTELLECTUAL PROPERTY"] }}>
+            <span className="apps-card-badge" style={{ backgroundColor: CATEGORY_COLOR["INTELLECTUAL PROPERTY"] }}>
               INTELLECTUAL PROPERTY
             </span>
             <div className="apps-card-body">
@@ -377,7 +377,7 @@ export default function AppsSection() {
           <a className="apps-card tall" href="#" data-col="3" aria-label="Blever">
             <img className="apps-card-img" src={APPS[2].image} alt="Blever" />
             <div className="apps-card-overlay" />
-            <span className="apps-card-badge" style={{ color: CATEGORY_COLOR["COLLECTIBLES"] }}>
+            <span className="apps-card-badge" style={{ backgroundColor: CATEGORY_COLOR["COLLECTIBLES"] }}>
               COLLECTIBLES
             </span>
             <div className="apps-card-body">
@@ -416,7 +416,7 @@ export default function AppsSection() {
           <a className="apps-card" href="#" data-col="2" data-row="2" aria-label="Ape Portal">
             <img className="apps-card-img" src={APPS[5].image} alt="Ape Portal" />
             <div className="apps-card-overlay" />
-            <span className="apps-card-badge" style={{ color: CATEGORY_COLOR["INFRASTRUCTURE"] }}>
+            <span className="apps-card-badge" style={{ backgroundColor: CATEGORY_COLOR["INFRASTRUCTURE"] }}>
               INFRASTRUCTURE
             </span>
             <div className="apps-card-body">
@@ -429,7 +429,7 @@ export default function AppsSection() {
           <a className="apps-card" href="#" data-col="4" data-row="2" aria-label="Clutch Markets">
             <img className="apps-card-img" src={APPS[6].image} alt="Clutch Markets" />
             <div className="apps-card-overlay" />
-            <span className="apps-card-badge" style={{ color: CATEGORY_COLOR["GAMES, FINANCE"] }}>
+            <span className="apps-card-badge" style={{ backgroundColor: CATEGORY_COLOR["GAMES, FINANCE"] }}>
               GAMES, FINANCE
             </span>
             <div className="apps-card-body">
