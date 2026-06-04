@@ -9,6 +9,7 @@ import Footer from '../components/common/Footer'
 const Home = () => {
   return (
     
+    
     <div>
       <Navbar />
       <HeroSection/>

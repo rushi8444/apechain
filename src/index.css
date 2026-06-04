@@ -1,26 +1,28 @@
 @import "tailwindcss";
- * { margin: 0; padding: 0; box-sizing: border-box; }
 
-:root {
-  --light-gray: #e8e8e8;
-  --pure-white: #ffffff;
-  --dark: #0a0b0d;
-  --nav-height: 64px;
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-@keyframes scaleDown {
-  0% {
-    transform: scale(5);
-  }
-  100% {
-    transform: scale(2);
-  }
+/* Root Fix */
+html,
+body,
+#root {
+  width: 100%;
+  overflow-x: hidden;
 }
 
-.loader-text {
-  animation: scaleDown 3s ease-out;
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-/* body {
+
+/* Body */
+body {
   background: #050816;
   color: white;
   font-family: Inter, sans-serif;
@@ -29,10 +31,14 @@
   -moz-osx-font-smoothing: grayscale;
   cursor: default;
 }
+
+/* Selection */
 ::selection {
   background: #9333ea;
   color: white;
 }
+
+/* Images */
 img {
   user-select: none;
   -webkit-user-drag: none;
@@ -87,79 +93,15 @@ h5,
 h6 {
   letter-spacing: -0.03em;
 }
-
-/* Prevent Blue Highlight */
-* {
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #0f172a;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #7e22ce;
-  border-radius: 999px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #9333ea;
-}
-
-/* Glass Effect */
-.glass {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* Gradient Text */
-.gradient-text {
-  background: linear-gradient(
-    90deg,
-    #9333ea,
-    #c084fc
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-@keyframes float {
+@keyframes scaleDown {
   0% {
-    /* transform: scale(5); */
-    transform: translateY(0);
+    transform: scale(5);
   }
-
-  50% {
-    transform: translateY(-12px);
-  }
-
   100% {
-    /* transform: scale(2); */
-    transform: translateY(0);
+    transform: scale(2);
   }
 }
 
-.float-animation {
-  animation: float 5s ease-in-out infinite;
+.loader-text {
+  animation: scaleDown 3s ease-out;
 }
-
-/* Fade Up */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-} */
